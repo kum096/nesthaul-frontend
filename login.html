@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="/imagesicons/home.png" type="image/png" />
+  <title>Login | NestHaul</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .login-container {
+      max-width: 400px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+
+    .login-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .login-form input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .login-form .submit-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: #0077cc;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-form .submit-btn:hover {
+      background: #005fa3;
+    }
+
+    .login-form .form-footer {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .login-form .form-footer a {
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+ <header id="navbar-container"></header>
+  <!-- Login Box -->
+  <main>
+    <div class="login-container">
+      <h2>Welcome Back</h2>
+       <form id="loginForm" class="login-form" action="#" method="POST">
+  <label for="email">Email Address</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+   <label for="password">Password</label>
+     <div class="password-field">
+      <input type="password" id="password" name="password" placeholder="Your password" required />
+      <img src="imagesicons/eye.svg" id="togglePassword" class="toggle-password" alt="Toggle visibility" />
+     </div>
+
+
+  <button type="submit" class="submit-btn">Log In</button>
+
+  <!-- ✅ Message placeholder -->
+  <p id="loginMessage" style="margin-top: 10px;"></p>
+
+  <div class="form-footer">
+    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+    <p><a href="#">Forgot your password?</a></p>
+  </div>
+</form>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 NestHaul. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="js/login.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+</html>

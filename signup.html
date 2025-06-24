@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="/imagesicons/home.png" type="image/png" />
+  <title>Sign Up | NestHaul</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .signup-container {
+      max-width: 500px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .signup-container h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+
+    .signup-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .signup-form input,
+    .signup-form select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .signup-form .submit-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background: #0077cc;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .signup-form .submit-btn:hover {
+      background: #005fa3;
+    }
+
+    .signup-form .form-footer {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .signup-form .form-footer a {
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+<header id="navbar-container"></header>
+  <!-- Signup Form -->
+  <main>
+  <div class="signup-container">
+    <h2>Create Your Account</h2>
+    <form class="signup-form" id="signupForm" action="#" method="POST">
+      
+      <label for="full-name">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="John Doe" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8901" required />
+
+      <label for="user-type">I am a:</label>
+      <select id="user-type" name="usertype" required>
+        <option value="">Select role</option>
+        <option value="buyer">Buyer</option>
+        <option value="seller">Seller</option>
+        <option value="both">Both</option>
+      </select>
+
+      <label for="password">Create Password</label>
+      <div class="password-field">
+        <input type="password" id="password" name="password" placeholder="At least 6 characters" minlength="6" required />
+        <img src="imagesicons/eye.svg" id="togglePassword" class="toggle-password" alt="Toggle visibility" />
+      </div>
+
+      <label for="confirm-password">Confirm Password</label>
+      <div class="password-field">
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repeat your password" required />
+        <img src="imagesicons/eye.svg" id="toggleConfirm" class="toggle-password" alt="Toggle visibility" />
+      </div>
+
+      <button type="submit" class="submit-btn">Sign Up</button>
+      <p id="signupMessage" class="message"></p>
+
+      <div class="form-footer">
+        <p>Already have an account? <a href="login.html">Log in here</a></p>
+      </div>
+    </form>
+  </div>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 NestHaul. All rights reserved.</p>
+      <ul class="footer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  
+<!-- Link the script at the bottom -->
+<script src="js/signup.js"></script>
+ <script src="js/main.js"></script>
+
+</body>
+</html>

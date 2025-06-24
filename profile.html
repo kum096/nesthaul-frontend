@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="/imagesicons/home.png" type="image/png" />
+  <title>My Profile | NestHaul</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Navbar Container -->
+<header id="navbar-container"></header>
+
+<main class="profile-container">
+  <!-- Welcome Section -->
+  <section class="profile-header">
+    <img src="imagesicons/user.png" alt="User Avatar" class="avatar">
+    <div class="profile-info">
+      <h2>Hello, <span id="username">John Doe</span></h2>
+      <p>Welcome back to NestHaul — your trusted home marketplace.</p>
+    </div>
+  </section>
+
+  <!-- Quick Actions -->
+  <section class="quick-actions">
+    <h3>Quick Actions</h3>
+    <div class="actions-grid">
+      <a href="browse.html" class="action-card">
+        <img src="imagesicons/search.svg" alt="Browse" />
+        <span>Browse Homes</span>
+      </a>
+      <a href="sell.html" class="action-card">
+        <img src="imagesicons/upload.svg" alt="Sell" />
+        <span>Sell a Home</span>
+      </a>
+      <a href="#" class="action-card">
+        <img src="imagesicons/favorite.png" alt="Saved" />
+        <span>Saved Homes</span>
+      </a>
+      <a href="#" class="action-card">
+        <img src="imagesicons/mail.svg" alt="Messages" />
+        <span>Messages</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Recent Activity -->
+  <section class="recent-activity">
+    <h3>Your Recent Listings</h3>
+    <div class="listing-scroll">
+      <!-- Mock listing cards -->
+      <div class="listing-card">
+        <img src="imagesicons/m21.webp" alt="Listing" />
+        <div>
+          <h4>3BR Apartment - Lekki Phase 1</h4>
+          <p>₦250,000/mo</p>
+        </div>
+      </div>
+      <div class="listing-card">
+        <img src="imagesicons/m15.jpg" alt="Listing" />
+        <div>
+          <h4>Duplex - Ikoyi</h4>
+          <p>₦750,000/mo</p>
+        </div>
+      </div>
+      <!-- Add more -->
+    </div>
+  </section>
+
+  <!-- Settings & Logout -->
+  <section class="settings-logout">
+    <button id="logoutBtn">Log Out</button>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 NestHaul. All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/profile.js"></script>
+</body>
+</html>
