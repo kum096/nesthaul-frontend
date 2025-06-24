@@ -68,3 +68,35 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
     initMap();
   });
+
+
+  //contact form workings
+
+   const form = document.getElementById('contactForm');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();  // prevent default form submission
+
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    };
+
+    try {
+      const response = await fetch('https://nesthaul-backend.onrender.com/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        alert('Message sent successfully! We will get back to you soon.');
+        form.reset();
+      } else {
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (error) {
+      alert('An error occurred: ' + error.message);
+    }
+  });

@@ -17,7 +17,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const response = await fetch("https://nesthaul-backend.onrender.com/api/user/profile", {
+    const response = await fetch("https://nesthaul-backend.onrender.com/api/profile", {
       headers: {
         Authorization: `Bearer ${token}`
       }
