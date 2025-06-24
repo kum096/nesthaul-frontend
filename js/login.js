@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch("https://nesthaul-backend.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
