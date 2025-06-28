@@ -51,38 +51,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // View Details Modal
-  document.querySelectorAll(".btn-view").forEach(button => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      const card = button.closest(".listing-card");
-      const title = card.querySelector("h3").innerText;
-      const location = card.querySelector("p").innerText;
-      const price = card.querySelector(".price").innerText;
-      const image = card.querySelector("img").src;
+// View Details Modal with Gallery Support
+document.querySelectorAll(".btn-view").forEach(button => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    const card = button.closest(".listing-card");
+    const title = card.querySelector("h3").innerText;
+    const location = card.querySelector("p").innerText;
+    const price = card.querySelector(".price").innerText;
+    const images = JSON.parse(card.dataset.images || '[]');
 
-      document.getElementById("modalBody").innerHTML = `
-        <img src="${image}" style="width:100%; max-height:300px; object-fit:cover;" />
-        <h2>${title}</h2>
-        <p><strong>Location:</strong> ${location}</p>
-        <p><strong>Price:</strong> ${price}</p>
-        <a href="contact.html" id="contactBtn">Contact Seller</a>
-      `;
+    // Generate image gallery HTML
+    const galleryHTML = images.map(img =>
+      `<img src="${img}" style="width:100px; height:auto; border-radius:8px; object-fit:cover; margin-right:8px;" />`
+    ).join("");
 
-      document.getElementById("detailsModal").style.display = "flex";
+    document.getElementById("modalBody").innerHTML = `
+      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:1rem;">
+        ${galleryHTML}
+      </div>
+      <h2>${title}</h2>
+      <p><strong>Location:</strong> ${location}</p>
+      <p><strong>Price:</strong> ${price}</p>
+      <a href="contact.html" id="contactBtn">Contact Seller</a>
+    `;
 
-      const contactBtn = document.getElementById("contactBtn");
-      contactBtn.style.marginTop = "1rem";
-      contactBtn.style.display = "inline-block";
-      contactBtn.style.backgroundColor = "#2196f3";
-      contactBtn.style.color = "white";
-      contactBtn.style.padding = "0.5rem 1.2rem";
-      contactBtn.style.border = "none";
-      contactBtn.style.borderRadius = "4px";
-      contactBtn.style.textDecoration = "none";
-      contactBtn.style.fontWeight = "bold";
-    });
+    document.getElementById("detailsModal").style.display = "flex";
+
+    // Style contact button
+    const contactBtn = document.getElementById("contactBtn");
+    contactBtn.style.marginTop = "1rem";
+    contactBtn.style.display = "inline-block";
+    contactBtn.style.backgroundColor = "#2196f3";
+    contactBtn.style.color = "white";
+    contactBtn.style.padding = "0.5rem 1.2rem";
+    contactBtn.style.border = "none";
+    contactBtn.style.borderRadius = "4px";
+    contactBtn.style.textDecoration = "none";
+    contactBtn.style.fontWeight = "bold";
   });
+});
+
 
   // Close Modal
   const closeModal = document.getElementById("closeModal");
